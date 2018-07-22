@@ -9,6 +9,7 @@ import Classes.Dados;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author Willian
@@ -126,22 +127,27 @@ public class frmLogin extends javax.swing.JFrame {
     private void cmdLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLoginActionPerformed
         //CÓDIGO DO BOTÃO LOGIN
         Dados clsdados = new Dados();
-        if(!clsdados.validarUsuarios(txtusuario.getText(),new String(txtsenha.getPassword()))){
-            JOptionPane.showMessageDialog(rootPane,"USUÁRIO E SENHA INCORRETAS");
+        if (!clsdados.validarUsuarios(txtusuario.getText(), new String(txtsenha.getPassword()))) {
+            JOptionPane.showMessageDialog(rootPane, "USUÁRIO E SENHA INCORRETAS");
             txtusuario.setText("");
             txtsenha.setText("");
             txtusuario.requestFocusInWindow();
             return;
         }
-        frmMenu frmmenu = new frmMenu();
-        this.setVisible(false);
-        frmmenu.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        frmmenu.setVisible(true);
+         
+        FrmMenu frmmenu = new FrmMenu();
+        NewJFrame j = new NewJFrame();
+        //j.setVisible(rootPaneCheckingEnabled);
         
+        frmmenu.setVisible(true);
+        //this.setVisible(false);
+        frmmenu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+
     }//GEN-LAST:event_cmdLoginActionPerformed
 
     private void cmdsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdsairActionPerformed
-       //ESTE É O CÓDIGO DO BOTÃO SAIR
+        //ESTE É O CÓDIGO DO BOTÃO SAIR
         this.dispose();
     }//GEN-LAST:event_cmdsairActionPerformed
 
